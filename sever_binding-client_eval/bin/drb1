@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'drb'
+DRb.start_service
+
+# When Server: `DRb.start_service 'druby://localhost:9000', Post.new`
+counterObj= DRbObject.new_with_uri  'druby://localhost:9000'
+counterObj.instance_eval do 
+  name="1122"  #a.class.first #Post.last.name
+  content="32132132"
+  save
+#####========>>>>>>>
+#   (0.4ms)  begin transaction
+#  SQL (0.3ms)  INSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-08-03 20:00:58.758943"], ["updated_at", "2016-08-03 20:00:58.758943"]]
+#   (87.6ms)  commit transaction
+
+end
