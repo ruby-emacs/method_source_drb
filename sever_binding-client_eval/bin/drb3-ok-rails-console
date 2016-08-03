@@ -14,7 +14,8 @@ file_str = open(ARGV[0]){ |f| f.read }
 puts counterObj.eval(file_str)
 
 # 3.执行Ruby文本:
-## ("rb" . "/usr/bin/drb")                                             #Post.all.map do |po|
+## ("rb" . "/usr/bin/drb")                                            
+#Post.all.map do |po|
 #  po.name
 #end.to_s
 ##=> ["dsadsa", "dsadsa", "dasdsadas", "fdasgsrb", "utjhehy", "nuyrjrbdtgbd", nil]     
